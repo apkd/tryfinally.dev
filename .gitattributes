@@ -1,0 +1,9 @@
+﻿/assets/bundle.js linguist-generated
+/assets/bundle.scss linguist-generated
+/assets/bundle.min.css linguist-generated
+/assets/*.js linguist-generated
+
+*.md linguist-detectable=true
+README.md linguist-detectable=false
+CONTRIBUTING.md linguist-detectable=false
+LICENSE.md linguist-detectable=false

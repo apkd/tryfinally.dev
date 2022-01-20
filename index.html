@@ -1,0 +1,47 @@
+---
+layout: site
+image: assets/img-min/cover/K-DwbsTXliY.webp
+description: my gamedev/unity/c# tech blog
+author: apkd
+---
+
+{% assign featured_post_count = 0 %}
+{% for post in site.posts %}
+{% if post.featured == true and post.draft != true %}
+{% assign featured_post_count = featured_post_count | plus: 1 %}
+{% endif %}
+{% endfor %}
+
+{% if featured_post_count > 0 %}
+<section class="featured-posts d-none d-md-block mt-4" >
+     <div class="section-title"> 
+         <h2><span>featured</span></h2> 
+     </div> 
+    <div class="row">
+        {% for post in site.posts %}
+            {% if post.featured == true and post.hidden == false %}
+                {% include featuredbox.html %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<section class="recent-posts">
+    {% if featured_post_count > 1 %}
+     <div class="section-title d-none d-md-block"> 
+         <h2><span>everything</span></h2> 
+     </div>
+    {% endif %}
+    <div class="row">
+        {% for post in paginator.posts %}
+            {% if post.featured != true or true %}
+                {% include postbox.html %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+<span class="navigation" role="navigation">
+    {% include pagination.html %}
+</span>

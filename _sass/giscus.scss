@@ -1,0 +1,16 @@
+﻿/*! purgecss start ignore */
+
+.giscus {
+  width: 100%;
+}
+
+.giscus-frame {
+  border: none;
+  color-scheme: normal;
+  width: 100%;
+  @media (min-width: 768px) {
+    min-height: 400px;
+  }
+}
+
+/*! purgecss end ignore */

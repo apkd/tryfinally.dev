@@ -1,0 +1,21 @@
+---
+layout: site
+---
+
+<div class="row">
+{% for tag in site.tags %}
+    <div class="section-title col-md-12 mt-4">
+    <h2 id="{{ tag[0] | replace: ' ','-' }}">tagged <span>#{{ tag[0] }}</span></h2>
+    </div>
+    {% assign pages_list = tag[1] %}
+    {% for post in pages_list %}
+        {% if post.title != null %}
+            {% if group == null or group == post.group %}
+                {% include postbox.html %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    {% assign pages_list = nil %}
+    {% assign group = nil %}
+{% endfor %}
+</div>

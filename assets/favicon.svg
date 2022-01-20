@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="188" viewBox="0 0 192 188">
+<defs>
+<style>
+.x {fill: #000;fill-rule: evenodd;}
+@media (prefers-color-scheme: dark) {.x {fill: #fff;}}
+</style>
+</defs>
+<path class="x" d="M1,59l1,7L53,3H45Zm64-7,2,13L117,3H105Zm61-20,7,31L181,3H151ZM3,68l14,58L65,68H3Zm65,0,14,58,48-58H68Zm66,0,12,55,47-55H134ZM18,133l13,58,46-58H18Zm65,0,12,52,42-52H83Z" transform="translate(-1 -3)"/>
+</svg>
