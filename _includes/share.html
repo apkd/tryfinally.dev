@@ -1,0 +1,32 @@
+<div class="share sticky-top sticky-top-offset mt-md-3">
+    <ul>
+
+        <li class="ms-1 me-1 scale-up-on-mobile">
+            <a target="_blank" href="{{site.github.repository_url}}/edit/master/{{page.path}}" onclick="window.open(this.href);return false;">
+            <p>contribute</p>
+                {% include svg/contribute.svg %}
+            </a>
+        </li>
+        
+        <li class="ms-1 me-1 scale-up-on-mobile">
+            <a data-accelerate="false" href="{{site.baseurl}}/feed.xml">
+            <p>feed</p>
+                {% include svg/rss.svg %}
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1 scale-up-on-mobile loading">
+            <applause-button url="{{page.url}}" class="clap clapped" multiclap="true">
+                <div class="style-root">
+                    <div class="shockwave"></div>
+                    <div class="count-container">
+                        <a class="count"></a>
+                    </div>
+                    {% include svg/clap.svg %}
+                    {% include svg/clap-sparkle.svg %}
+                </div>
+            </applause-button>
+        </li>
+
+    </ul>
+</div>

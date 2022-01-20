@@ -1,0 +1,167 @@
+---
+layout: site
+post_class: post-template
+---
+
+<div class="row">
+
+    <div class="col-md-1 p-0">
+        {% include share.html %}
+    </div>
+
+    {% assign author = site.authors[page.author] %}
+
+    <div class="col-md-10 flex-first flex-md-unordered">
+        <div class="mainheading">
+
+            {% if page.author %}
+            <div class="d-flex align-items-center mb-2 post-top-meta">
+                <div class="text-start mb-md-0 me-1 flex-shrink-0">
+                    {% if author.avatar %}
+                    <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}"
+                         alt="{{ author.display_name }}">
+                    {% endif %}
+                </div>
+                <div class="column text-start mb-0" style="line-height: 1.15">
+                    {% if author.web %}
+                    <span class="author-name author-name-large"><a target="_blank" href="{{ author.web }}">{{ author.display_name }}</a></span>
+                    {% else %}
+                    <span class="author-name author-name-large">{{ author.display_name }}</span>
+                    {% endif %}
+                    <span class="author-description">{{ author.description }}</span>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if page.tags %}
+            <ul class="tags text-end" style="margin-top:-24px;margin-bottom:4px;">
+                {% assign sortedTags = page.tags | sort %}
+                {% for tag in sortedTags %}<li><a href="{{site.baseurl}}/tags#{{ tag | replace: ' ','-' }}">#{{ tag }}</a></li>{% endfor %}
+            </ul>
+            {% endif %}
+
+            <h1 class="post-title">{{ page.title }}</h1>
+        </div>
+
+        {% if page.image %}
+        <div class="featured-image-container mb-4">
+            <img width="2048" height="400" class="featured-image" src="{% if page.image contains ' ://' %} {{ page.image }}{% else %}{{site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}" loading="lazy">
+            {% comment %}
+            {% if page.thumbtext %}
+            <div class="featured-image-text">{{ page.thumbtext }}</div>
+            {% endif %}
+            {% endcomment %}
+        </div>
+        {% endif %}
+
+        <div class="article-content">
+            {{content}}
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 my-5">
+                {% if page.series %}
+                {% assign category = page.categories | first %}
+                {% if site.categories[category].size > 1 %}
+                <div class="card mx-1" style="max-width: 512px">
+                    <div class="card-body">
+
+                        {% if page.tags and page.tags.size > 1 %}
+                        <div class="text-end" style="margin-bottom: -40px;">
+                            <ul class="tags">
+                                {% assign sortedTags = page.tags | sort %}
+                                {% for tag in sortedTags %}<li><a href="{{site.baseurl}}/tags#{{ tag | replace: ' ','-' }}">#{{ tag }}</a></li>{% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                        <div class="h3 card-title mb-0">{{ category }}</div>
+                        <!-- <span class="card-text h6">post series</span> -->
+                    </div>
+                    <div class="card-footer pt-0 postlist">
+                        <ol>
+                            {% assign series = site.categories[category] | reverse %}
+                            {% for post in series %}
+                            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+                {% endif %}
+                {% endif %}
+            </div>
+            <div class="col-md-4 my-5 order-first order-md-last">
+                <div class="article-footer text-end">
+
+                    {% if page.contributors and page.contributors.size > 0 %}
+                    <p class="post-etc my-0">
+                        <em>contributors</em>
+                    </p>
+                    <p class="mb-3 avatar-32" style="margin-right: 1px">
+                        {% for contributor in page.contributors %}
+                        <a href="https://github.com/{{ contributor }}" title="{{ contributor }}">
+                            {% avatar user=contributor %}
+                        </a>
+                        {% endfor %}
+                    </p>
+                    {% endif %}
+
+                    {% if page.license %}
+                    <p class="post-etc mb-1">
+                        {% if page.license == "cc-by" %}
+                        <a class="nounderline" href="https://creativecommons.org/licenses/by/4.0/"> {% include svg/cc.svg %} {% include svg/cc-by.svg %}</a>
+                        {% endif %}
+                        {% if page.license == "cc-by-sa" %}
+                        <a class="nounderline" href="https://creativecommons.org/licenses/by-sa/4.0/"> {% include svg/cc.svg %} {% include svg/cc-by.svg %} {% include svg/cc-sa.svg %}</a>
+                        {% endif %}
+                        {% if page.license == "cc-by-nc-sa" %}
+                        <a class="nounderline" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> {% include svg/cc.svg %} {% include svg/cc-by.svg %} {% include svg/cc-nc.svg %} {% include
+                            svg/cc-sa.svg %}</a>
+                        {% endif %}
+                        {% if page.license == "cc-zero" %}
+                        <a class="nounderline" href="https://creativecommons.org/publicdomain/zero/1.0/"> {% include svg/cc.svg %} {% include svg/cc-zero.svg %}</a>
+                        {% endif %}
+                    </p>
+                    {% endif %}
+
+                    <p class="mb-0">
+                        <time datetime="{{ page.date | date:' %Y-%m-%d' }}">
+                            <em>{{ page.date | date: "%B %-d, %Y" | downcase}}</em>
+                        </time>
+                    </p>
+
+                    {% if page.image %}
+                    <p class="mb-0">
+                        <a href="https://unsplash.com/photos/{{ page.image | split: '/' | last | split: '.' | first }}"><em>cover image credit</em></a>
+                    </p>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="bottompagination">-->
+<!--    <div class="row d-flex justify-content-between font-weight-bold">-->
+<!--        {% if page.previous.url %}-->
+<!--        <a class="prev d-block col-md-5" href="{{ site.baseurl }}/{{page.previous.url}}">-->
+<!--            {% include svg/chevron-left.svg %}{{page.previous.title}}-->
+<!--        </a>-->
+<!--        {% else %}-->
+<!--        <a class="prev d-block col-md-5"></a>-->
+<!--        {% endif %}-->
+<!--        {% if page.next.url %}-->
+<!--        <a class="next d-block col-md-5 text-lg-end" href="{{ site.baseurl }}/{{page.next.url}}">-->
+<!--            {{page.next.title}}{% include svg/chevron-right.svg %}-->
+<!--        </a>-->
+<!--        {% endif %}-->
+<!--        <div class="clearfix"></div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="row">
+    <div class="col-lg-2 col-md-1"></div>
+    <div class="col-lg-8 col-md-10">
+        <div class="giscus"></div>
+    </div>
+</div>

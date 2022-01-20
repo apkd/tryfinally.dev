@@ -1,0 +1,8 @@
+﻿/.idea
+/_site
+/_drafts
+/_drafts_hidden
+/node_modules
+/ruby_modules
+.jekyll-metadata
+Gemfile.lock

@@ -1,0 +1,27 @@
+{
+  "name": "tryfinally",
+  "author": "apkd <apkd@users.noreply.github.com>",
+  "private": true,
+  "devDependencies": {
+    "bootstrap": "5.1.3",
+    "shx": "0.3.4",
+    "darkreader": "4.9.27",
+    "purgecss": "4.1.3",
+    "terser": "5.10.0",
+    "typescript": "4.5.4",
+    "imagemin-cli": "7.0.0",
+    "imagemin-webp": "7.0.0",
+    "clean-css-cli": "5.5.0"
+  },
+  "scripts": {
+    "serve": "yarn build && bundle exec jekyll serve --watch",
+    "build": "yarn build-js && yarn build-css && yarn build-img",
+    "build-js": "yarn tsc && terser --config-file terserconfig.json --output assets/bundle.min.js -- assets/bundle.js && terser --output assets/iframe-resizer.min.js -- assets/iframe-resizer.js",
+    "build-css": "yarn shx cp node_modules/bootstrap/dist/css/bootstrap.css _sass/bootstrap.scss && bundle exec jekyll build && purgecss --safelist my-0 my-1 my-2 my-3 my-4 my-5 --css _site/assets/bundle.css --content _site/**/*.html --output assets/bundle.min.css",
+    "build-img": "yarn build-img-1 && yarn build-img-2 && yarn build-img-3",
+    "build-img-1": "yarn imagemin assets/img/cover --out-dir=assets/img-min/cover --plugin.webp.method=6 --plugin.webp.quality=90 --plugin.webp.autofilter=true --plugin.webp.crop.x=0 --plugin.webp.crop.y=512 --plugin.webp.crop.width=2048 --plugin.webp.crop.height=400",
+    "build-img-2": "yarn imagemin assets/img/cover --out-dir=assets/img-min/thumb --plugin.webp.method=6 --plugin.webp.quality=80 --plugin.webp.autofilter=true --plugin.webp.resize.width=720 --plugin.webp.resize.height=0",
+    "build-img-3": "yarn imagemin assets/img/site  --out-dir=assets/img-min/site  --plugin.webp.method=6 --plugin.webp.quality=90 --plugin.webp.autofilter=true"
+  }
+}
+

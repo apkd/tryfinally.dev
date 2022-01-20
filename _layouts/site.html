@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/favicon.svg">
+    <link rel="alternate icon" href="{{ site.baseurl }}/assets/favicon.ico">
+    <link rel="mask-icon" href="{{ site.baseurl }}/assets/favicon.svg" color="#eee">
+
+    {% seo %}
+
+    <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="{{ site.baseurl }}/feed.xml">
+
+    {% if jekyll.environment == "production" %}
+    {% assign min = ".min" %}
+    {% else %}
+    {% assign min = "" %}
+    {% endif %}
+
+    <link href="{{ site.baseurl }}/assets/bundle{{ min }}.css" rel="stylesheet">
+    <noscript>
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/noscript.css">
+    </noscript>
+    <script defer src="{{ site.baseurl }}/assets/bundle{{ min }}.js"></script>
+    <script async src="{{ site.baseurl }}/assets/iframe-resizer.min.js"></script>
+
+    {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+</head>
+
+<body class="{{layout}}">
+<nav class="navbar navbar-expand navbar-light fixed-top nav-down user-select-none">
+    <div class="container pr-0">
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
+            {% include svg/icon.svg %}
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ml-auto">
+
+                {% if page.url == "/" %}
+                <li class="nav-item active px-md-1">
+                {% else %}
+                <li class="nav-item px-md-1">
+                {% endif %}
+                    <a class="nav-link" href="{{ site.baseurl }}/">posts</a>
+                </li>
+
+                {% if page.url == "/tags" %}
+                <li class="nav-item active px-md-1">
+                {% else %}
+                <li class="nav-item px-md-1">
+                {% endif %}
+                    <a class="nav-link" href="{{ site.baseurl }}/tags">tags</a>
+                </li>
+
+                <li class="nav-item px-md-1">
+                    <a class="nav-link" href="https://github.com/apkd/tryfinally.dev" target="_blank">src</a>
+                </li>
+
+                <!-- <li class="nav-item"> -->
+                <!--     <a class="nav-link" href="https://uncursed.io/" target="_blank">uncursed</a> -->
+                <!-- </li> -->
+
+                <!-- <li class="nav-item"> -->
+                <!--     <a class="nav-link" href="https://uncursed.io/#dungeon" target="_blank">dungeon</a> -->
+                <!-- </li> -->
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="site-content">
+    <div class="container">
+
+        {% if site.description.size > 0 %}
+        <p class="lead user-select-none">
+            {{ site.description }}
+        </p>
+        {% endif %}
+
+        <div class="alert alert-danger d-none" id="error-alert" role="alert"></div>
+
+        <div class="main-content">
+            {{ content }}
+        </div>
+
+        <footer>
+            <p class="mb-0">No personally identifiable data collected or shared</p>
+        </footer>
+
+    </div>
+</div>
+</body>
+</html>

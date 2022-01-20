@@ -1,0 +1,10 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="jekyll" type="RunNativeExe" factoryName="Native Executable">
+    <option name="EXE_PATH" value="C:/Ruby27-x64/bin/bundle.bat" />
+    <option name="PROGRAM_PARAMETERS" value="exec jekyll serve --drafts" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="PASS_PARENT_ENVS" value="1" />
+    <option name="USE_EXTERNAL_CONSOLE" value="0" />
+    <method v="2" />
+  </configuration>
+</component>

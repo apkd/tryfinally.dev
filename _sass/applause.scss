@@ -1,0 +1,211 @@
+applause-button {
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-bottom: -9px;
+  left: -0.5%;
+
+  .style-root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0
+  }
+
+  .style-root:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: " ";
+    display: block;
+  }
+  
+  .count{
+    text-decoration: underline dotted currentColor;
+    text-decoration-thickness: 0.5px;
+  }
+
+  svg {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    margin-left: 23%;
+    margin-top: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    stroke: none;
+    overflow: visible !important
+  }
+
+  svg g.flat {
+    visibility: hidden
+  }
+
+  svg g.outline {
+    visibility: visible
+  }
+
+  g.sparkle circle {
+    opacity: 0;
+    stroke-width: 0
+  }
+
+  g.sparkle g:nth-child(1) {
+    transform: rotate(0deg) translateX(10px)
+  }
+
+  g.sparkle g:nth-child(2) {
+    transform: rotate(72deg) translateX(10px)
+  }
+
+  g.sparkle g:nth-child(3) {
+    transform: rotate(144deg) translateX(10px)
+  }
+
+  g.sparkle g:nth-child(4) {
+    transform: rotate(216deg) translateX(10px)
+  }
+
+  g.sparkle g:nth-child(5) {
+    transform: rotate(288deg) translateX(10px)
+  }
+
+  div.style-root svg:hover {
+    color: black;
+    fill: black;
+  }
+}
+
+applause-button.clap-limit-exceeded {
+  cursor: inherit
+}
+
+applause-button.clap-limit-exceeded div {
+  fill: gray !important;
+  stroke: gray !important;
+  color: gray !important
+}
+
+applause-button.clapped svg g.flat {
+  visibility: visible
+}
+
+applause-button.clapped svg g.outline {
+  visibility: hidden
+}
+
+applause-button .count-container {
+  display: block;
+}
+
+applause-button {
+  transition: all 0.1s;
+}
+
+applause-button:hover {
+  color: white;
+  text-decoration: none;
+  svg {
+    fill: white;
+  }
+}
+
+applause-button.clap {
+  animation-name: pulse;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1
+}
+
+applause-button.clap .sparkle circle {
+  animation-name: explode;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1
+}
+
+applause-button.clap .count {
+  animation-name: hideThenShow;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1
+}
+
+@media (prefers-reduced-motion) {
+  applause-button.clap {
+    animation-iteration-count: 0
+  }
+
+  applause-button.clap .sparkle circle {
+    animation-iteration-count: 0
+  }
+
+  applause-button.clap .count {
+    animation-iteration-count: 0
+  }
+}
+
+@keyframes explode {
+  0% {
+    transform: translateX(10px);
+    opacity: 0
+  }
+
+  20% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(25px)
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1)
+  }
+
+  50% {
+    transform: scale(1.1)
+  }
+
+  100% {
+    transform: scale(1)
+  }
+}
+
+@keyframes hideThenShow {
+  0% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+
+  20% {
+    opacity: 0;
+    transform: translateY(-10px)
+  }
+
+  50% {
+    transform: translateY(10px)
+  }
+
+  80% {
+    transform: translateY(10px);
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}

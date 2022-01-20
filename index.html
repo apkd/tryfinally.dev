@@ -1,0 +1,36 @@
+---
+layout: site
+image: assets/img-min/cover/K-DwbsTXliY.webp
+description: my gamedev/unity/c# tech blog
+author: apkd
+---
+
+<section class="featured-posts" >
+    <!-- <div class="section-title"> -->
+    <!--     <h2><span>featured posts</span></h2> -->
+    <!-- </div> -->
+    <div class="row">
+        {% for post in site.posts %}
+            {% if post.featured == true %}
+                {% include featuredbox.html %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+<section class="recent-posts">
+    <!-- <div class="section-title"> -->
+    <!--     <h2><span>more</span></h2> -->
+    <!-- </div> -->
+    <div class="row">
+        {% for post in paginator.posts %}
+            {% if post.featured != true %}
+                {% include postbox.html %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+<span class="navigation" role="navigation">
+    {% include pagination.html %}
+</span>
