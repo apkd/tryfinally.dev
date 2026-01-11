@@ -1,0 +1,36 @@
+<div class="share sticky-top sticky-top-offset mt-md-3 d-print-none">
+    <ul>
+
+        {% if page.editable != false %}
+        <li class="ms-1 me-1 scale-up-on-mobile">
+            <a target="_blank" href="{{site.github.repository_url}}/edit/master/{{page.path}}" onclick="window.open(this.href);return false;">
+            <p>src</p>
+                {% include svg/contribute.svg %}
+            </a>
+        </li>
+        {% endif %}
+
+        <li class="ms-1 me-1 scale-up-on-mobile">
+            <a data-accelerate="false" href="{{site.baseurl}}/feed.xml">
+                <p>feed</p>
+                {% include svg/rss.svg %}
+            </a>
+        </li>
+
+        {% if page.hackernews %}
+        <li class="ms-1 me-1 scale-up-on-mobile">
+            <a href="https://news.ycombinator.com/item?id={{page.hackernews}}">
+                <p>hn</p>
+                {% include svg/hn.svg %}
+            </a>
+        </li>
+        {% endif %}
+
+        <li class="ms-1 me-1 scale-up-on-mobile">
+            <a href="#comments" id="init-giscus">
+                <p>discuss</p>
+                {% include svg/comment.svg %}
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,400 @@
+﻿$code: #49F3C3;
+$keyword: #FF6E89;
+$types: #FFCB6B;
+$punctuation: #FFFFFF;
+$constant: #FFFECA;
+$comments: #d4ccc0; //#999;
+$lineno: #d4ccc0;
+
+.highlight table td {
+  padding: 5px;
+}
+
+.highlight table pre {
+  margin: 0;
+}
+
+.highlight .c,
+.highlight .cd {
+  color: $comments;
+  font-style: italic;
+}
+
+.highlight .cm {
+  color: $comments;
+  font-style: italic;
+}
+
+.highlight .c1 {
+  color: $comments;
+  font-style: italic;
+  text-shadow: 0 1px 1px #000;
+}
+
+pre.lineno {
+  color: $lineno;
+  font-style: italic;
+  text-shadow: 0 1px 1px #000;
+}
+
+.highlight .cp {
+  color: $comments;
+  font-style: italic;
+}
+
+.highlight .cs {
+  color: $comments;
+  font-style: italic;
+}
+
+.highlight .err {
+  color: $code;
+  background-color: #403d3d;
+}
+
+.highlight .gi {
+  color: $code;
+}
+
+.highlight .gd {
+  color: $keyword;
+}
+
+.highlight .ge {
+  color: #1b1d1e;
+  font-style: italic;
+}
+
+.highlight .gr {
+  color: $keyword;
+}
+
+.highlight .gt {
+  color: $keyword;
+}
+
+.highlight .gh {
+  color: #403d3d;
+}
+
+.highlight .go {
+  color: #403d3d;
+}
+
+.highlight .gp {
+  color: $keyword;
+}
+
+.highlight .gs {
+  font-style: italic;
+}
+
+.highlight .gu {
+  color: $comments;
+}
+
+.highlight .k,
+.highlight .kv {
+  color: $keyword;
+  font-style: italic;
+}
+
+.highlight .kc {
+  color: $keyword;
+  font-style: italic;
+}
+
+.highlight .kd {
+  color: $keyword;
+  font-style: italic;
+}
+
+.highlight .kp {
+  color: $keyword;
+  font-style: italic;
+}
+
+.highlight .kr {
+  color: $keyword;
+  font-style: italic;
+}
+
+.highlight .kt {
+  color: $keyword;
+  font-style: italic;
+}
+
+.highlight .kn {
+  color: $keyword;
+  font-style: italic;
+}
+
+.highlight .ow {
+  color: $keyword;
+  font-style: italic;
+}
+
+.highlight .o {
+  color: $keyword;
+  font-style: italic;
+}
+
+.highlight .mf {
+  color: $constant;
+}
+
+.highlight .mh {
+  color: $constant;
+}
+
+.highlight .il {
+  color: $constant;
+}
+
+.highlight .mi {
+  color: $constant;
+}
+
+.highlight .mo {
+  color: $constant;
+}
+
+.highlight .m,
+.highlight .mb,
+.highlight .mx {
+  color: $constant;
+}
+
+.highlight .se {
+  color: $constant;
+}
+
+.highlight .sb {
+  color: $constant;
+}
+
+.highlight .sc {
+  color: $constant;
+}
+
+.highlight .sd {
+  color: $constant;
+}
+
+.highlight .s2 {
+  color: $constant;
+}
+
+.highlight .sh {
+  color: $constant;
+}
+
+.highlight .si {
+  color: $constant;
+}
+
+.highlight .sx {
+  color: $constant;
+}
+
+.highlight .sr {
+  color: $constant;
+}
+
+.highlight .s1 {
+  color: $constant;
+}
+
+.highlight .ss {
+  color: $constant;
+}
+
+.highlight .s {
+  color: $constant;
+}
+
+.highlight .n {
+  color: $code;
+}
+
+.highlight .na {
+  color: $code;
+}
+
+.highlight .nc {
+  color: $code;
+}
+
+.highlight .nd {
+  color: $code;
+  font-style: italic;
+}
+
+.highlight .ne {
+  color: $code;
+  font-style: italic;
+}
+
+.highlight .nf {
+  color: $code;
+  //font-style: italic;
+}
+
+.highlight .no {
+  color: $code;
+}
+
+.highlight .bp {
+  color: $code;
+}
+
+.highlight .nb {
+  color: $code;
+}
+
+.highlight .ni {
+  color: $code;
+}
+
+.highlight .nn {
+  color: $code;
+}
+
+.highlight .vc {
+  color: $code;
+}
+
+.highlight .vg {
+  color: $code;
+}
+
+.highlight .vi {
+  color: $code;
+}
+
+.highlight .nv {
+  color: $code;
+}
+
+.highlight .w {
+  color: $code;
+}
+
+.highlight .nl {
+  color: $code;
+  font-style: italic;
+}
+
+.highlight .nt {
+  color: $keyword;
+}
+
+.highlight {
+  color: $code;
+}
+
+.highlight .p,
+.highlight .pi {
+  color: $punctuation;
+}
+
+td.rouge-code {
+  width: 100%;
+}
+
+pre.lineno {
+  pointer-events: none;
+  user-select: none;
+}
+
+/*! purgecss start ignore */
+
+// markdown `inline` code
+code.highlighter-rouge {
+  font-family: Monoid, monospace, sans-serif;
+  font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual;
+  font-feature-settings: "calt" 1, "liga" 1;
+  font-weight: normal;
+  font-size-adjust: .37;
+  letter-spacing: 0.025em;
+  color: $constant;
+  background-color: #202020;
+  padding: 0 0.1rem;
+  vertical-align: 0.05em;
+  display: inline-block;
+  white-space: pre-wrap;
+  word-wrap: anywhere;
+  overflow-wrap: anywhere;
+}
+
+a:not(:hover) code {
+  text-decoration: underline dotted currentColor;
+  text-decoration-thickness: 0.5px;
+  transition: color 0.3s;
+
+  span {
+    text-decoration: underline dotted currentColor;
+    text-decoration-thickness: 0.5px;
+    transition: color 0.3s;
+  }
+}
+
+a:hover code {
+  text-decoration: underline dotted $code;
+  color: $code !important;
+  transition: color 0.3s;
+
+  span {
+    text-decoration: underline dotted $code;
+    color: $code !important;
+    transition: color 0.3s;
+  }
+}
+
+code.language-plaintext.highlighter-rouge > :not(span) {
+  color: $constant;
+}
+
+// markdown usage: `inline`{:.keyword}
+code.language-plaintext.highlighter-rouge.keyword {
+  color: $keyword;
+  font-style: italic;
+  font-weight: normal;
+}
+
+// markdown usage: `inline`{:.constant}
+code.language-plaintext.highlighter-rouge.constant {
+  color: $constant;
+  font-style: italic;
+  font-weight: normal;
+}
+
+// markdown multiline code
+pre {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  font-family: Monoid, monospace, sans-serif;
+  font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual;
+  font-feature-settings: "calt" 1, "liga" 1;
+  font-size: .65rem;
+  overflow: auto;
+  border-radius: 0;
+  line-height: 1.6;
+  background-color: #181818;
+}
+
+// light theme
+//@media (prefers-color-scheme: light) {
+//  pre {
+//    background-color: #060606;
+//  }
+//  div.language-cs.highlighter-rouge,
+//  code.language-plaintext.highlighter-rouge {
+//    background-color: #080808;
+//    filter: invert(1) hue-rotate(180deg) saturate(2);
+//  }
+//}
+
+/*! purgecss end ignore */

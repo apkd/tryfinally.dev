@@ -1,0 +1,23 @@
+exclude:
+  - .git/
+  - .idea/
+  - .run/
+  - node_modules/
+  - ruby_modules/
+  - static/
+  - ./*.json
+  - ./*.lock
+  - ./*.log
+  - Gemfile
+  - CNAME
+  - _drafts/maybenot/
+
+keep_files:
+  - assets/
+
+sass:
+  style: expanded
+  sass_dir: __ignore__
+
+plugins:
+  - jekyll-avatar

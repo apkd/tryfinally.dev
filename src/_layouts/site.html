@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="max-image-preview:large">
+
+    {% if jekyll.environment == "production" %}
+    {% assign min = ".min" %}
+    {% else %}
+    {% assign min = "" %}
+    {% endif %}
+
+    <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">
+    <link rel="alternate icon" href="{{ site.baseurl }}/favicon.ico">
+    <link rel="mask-icon" href="{{ site.baseurl }}/favicon.svg" color="#eee">
+    <link data-pagefind-meta="url[href]" href="{{ page.url }}">
+
+    {% if page.image %}
+    <meta data-pagefind-meta="image[content]" content="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image | replace_first: 'assets/img/social/', 'assets/img/thumb/' }}{% endif %}">
+    {% endif %}
+
+    {% seo %}
+
+    <link href="{{ site.baseurl }}/assets/bundle{{ min }}.css" rel="stylesheet" fetchpriority="high">
+    <link href="{{ site.baseurl }}/assets/pagefind/pagefind-ui.css" rel="stylesheet">
+    <noscript>
+        <link href="{{ site.baseurl }}/assets/noscript.css" rel="stylesheet">
+    </noscript>
+    <link rel="preconnect" href="https://giscus.app">
+    <link rel="dns-prefetch" href="https://giscus.app">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ site.baseurl }}/assets/fonts/anaheim/8vII7w042Wp87g4G4U3eEX5e.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ site.baseurl }}/assets/fonts/anaheim/8vII7w042Wp87g4G4UPeEQ.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ site.baseurl }}/assets/fonts/barlow/HTx3L3I-JCGChYJ8VI-L6OO_au7B6xHT2g.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ site.baseurl }}/assets/fonts/barlow/HTxwL3I-JCGChYJ8VI-L6OO_au7B47rxz3bWuQ.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ site.baseurl }}/assets/fonts/barlow/HTxyL3I-JCGChYJ8VI-L6OO_au7B6xTrB3Xmu4kG.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ site.baseurl }}/assets/fonts/barlow/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ site.baseurl }}/assets/fonts/monoid/monoid.woff2" fetchpriority="low">
+
+    <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="{{ site.baseurl }}/feed.xml">
+
+    <script defer src="{{ site.baseurl }}/assets/pagefind/pagefind-ui.js" fetchpriority="high"></script>
+    <script defer src="{{ site.baseurl }}/assets/bundle{{ min }}.js" fetchpriority="high"></script>
+
+    {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+</head>
+
+<body class="{{layout}}">
+<nav class="navbar navbar-expand navbar-light fixed-top nav-down user-select-none d-print-none">
+    <div class="container pr-0">
+        <a aria-label="tryfinally.dev home" class="navbar-brand" href="{{ site.baseurl }}/">
+            {% include svg/icon.svg %}
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ml-auto">
+
+                {% if page.url == "/" %}
+                <li class="nav-item active px-md-1">
+                {% else %}
+                <li class="nav-item px-md-1">
+                {% endif %}
+                    <a class="nav-link" href="{{ site.baseurl }}/">posts</a>
+                </li>
+
+<!--                {% if page.url == "/tags" %}-->
+<!--                <li class="nav-item active px-md-1">-->
+<!--                {% else %}-->
+<!--                <li class="nav-item px-md-1">-->
+<!--                {% endif %}-->
+<!--                    <a class="nav-link" href="{{ site.baseurl }}/tags">tags</a>-->
+<!--                </li>-->
+
+                <li class="nav-item px-md-1">
+                    <a class="nav-link" href="https://github.com/apkd/tryfinally.dev" target="_blank">src</a>
+                </li>
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="https://highlandkeep.com/" target="_blank">highland keep</a>
+                 </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="site-content">
+    <div class="container">
+
+        {% if site.description.size > 0 %}
+        <p class="lead user-select-none">
+            {{ site.description }}
+        </p>
+        {% endif %}
+
+        <div class="alert alert-danger d-none" id="error-alert" role="alert"></div>
+
+        <div class="main-content">
+            {{ content }}
+        </div>
+
+        <footer data-pagefind-ignore>
+            <noscript>
+                <p class="mb-0">javascript disabled - regrettably, some website features won't be available</p>
+            </noscript>
+            <p class="mb-0">no personally identifiable data collected or shared</p>
+        </footer>
+
+    </div>
+</div>
+</body>
+</html>
