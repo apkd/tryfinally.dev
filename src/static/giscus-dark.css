@@ -1,0 +1,236 @@
+﻿/*! Modified from GitHub's dark theme in primer/primitives.
+ * MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
+
+/* latin-ext */
+@font-face {
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(./fonts/barlow/HTxwL3I-JCGChYJ8VI-L6OO_au7B497yz3jWuZEC.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(./fonts/barlow/HTxwL3I-JCGChYJ8VI-L6OO_au7B497yz3bWuQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Anaheim';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(./fonts/anaheim/8vII7w042Wp87g4G4U3eEX5e.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Anaheim';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(./fonts/anaheim/8vII7w042Wp87g4G4UPeEQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Monoid';
+    src: url('./fonts/monoid/monoid.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/*$code: #49F3C3;*/
+/*$keyword: #FF6E89;*/
+/*$types: #FFCB6B;*/
+/*$punctuation: #FFFFFF;*/
+/*$constant: #FFFECA;*/
+/*$comments: #999;*/
+
+main {
+    --color-prettylights-syntax-comment: #999;
+    --color-prettylights-syntax-constant: #FFFECA;
+    --color-prettylights-syntax-entity: #49F3C3;
+    --color-prettylights-syntax-storage-modifier-import: #49F3C3;
+    --color-prettylights-syntax-entity-tag: #49F3C3;
+    --color-prettylights-syntax-keyword: #FF6E89;
+    --color-prettylights-syntax-string: #FFFECA;
+    --color-prettylights-syntax-variable: #49F3C3;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #FFFFFF;
+    --color-prettylights-syntax-invalid-illegal-text: #FF6E89;
+    --color-prettylights-syntax-invalid-illegal-bg: transparent;
+    --color-prettylights-syntax-carriage-return-text: #FFFFFF;
+    --color-prettylights-syntax-carriage-return-bg: transparent;
+    --color-prettylights-syntax-string-regexp: #7ee787;
+    --color-prettylights-syntax-markup-list: #49F3C3;
+    --color-prettylights-syntax-markup-heading: #FFFECA;
+    --color-prettylights-syntax-markup-italic: #49F3C3;
+    --color-prettylights-syntax-markup-bold: #49F3C3;
+    --color-prettylights-syntax-markup-deleted-text: #fff;
+    --color-prettylights-syntax-markup-deleted-bg: rgba(255, 110, 137, 0.5);
+    --color-prettylights-syntax-markup-inserted-text: #fff;
+    --color-prettylights-syntax-markup-inserted-bg: rgba(73, 243, 195, 0.5);
+    --color-prettylights-syntax-markup-changed-text: #fff;
+    --color-prettylights-syntax-markup-changed-bg: rgba(255, 254, 202, 0.5);
+    --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+    --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+    --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+    --color-prettylights-syntax-brackethighlighter-angle: #FFFFFF;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+    --color-prettylights-syntax-constant-other-reference-link: #FFFECA;
+    --color-btn-text: #ffffff;
+    --color-btn-bg: #21262d;
+    --color-btn-border: rgba(240, 246, 252, 0.1);
+    --color-btn-shadow: 0 0 transparent;
+    --color-btn-inset-shadow: 0 0 transparent;
+    --color-btn-hover-bg: #30363d;
+    --color-btn-hover-border: #8b949e;
+    --color-btn-active-bg: hsla(212, 12%, 18%, 1);
+    --color-btn-active-border: #6e7681;
+    --color-btn-primary-text: #ffffff;
+    --color-btn-primary-bg: #47b394;
+    --color-btn-primary-border: rgba(240, 246, 252, 0.1);
+    --color-btn-primary-shadow: 0 0 transparent;
+    --color-btn-primary-inset-shadow: 0 0 transparent;
+    --color-btn-primary-hover-bg: #49F3C3;
+    --color-btn-primary-hover-border: rgba(240, 246, 252, 0.1);
+    --color-btn-primary-selected-bg: #238636;
+    --color-btn-primary-selected-shadow: 0 0 transparent;
+    --color-btn-primary-disabled-text: rgba(240, 246, 252, 0.5);
+    --color-btn-primary-disabled-bg: #2e4d42;
+    --color-btn-primary-disabled-border: rgba(240, 246, 252, 0.1);
+    --color-fg-default: rgba(247, 242, 233, 1.0);
+    --color-fg-muted: rgba(247, 242, 233, 0.7);
+    --color-fg-subtle: rgba(247, 242, 233, 0.9);
+    --color-canvas-default: transparent;
+    --color-canvas-overlay: rgba(22, 27, 34, 0.9);
+    --color-canvas-inset: transparent;
+    --color-canvas-subtle: transparent;
+    --color-border-default: rgba(144, 133, 115, 0.13);
+    --color-border-muted: rgba(144, 133, 115, 0.1);
+    --color-neutral-muted: rgba(110, 118, 129, 0.4);
+    --color-neutral-subtle: rgba(110, 118, 129, 0.1);
+    --color-accent-fg: #49F3C3;
+    --color-accent-emphasis: #49F3C3;
+    --color-accent-muted: rgba(144, 133, 115, 0.13);
+    --color-accent-subtle: rgba(144, 133, 115, 0.1);
+    --color-success-fg: #3fb950;
+    --color-danger-fg: #f85149;
+    --color-primer-shadow-focus: 0 0 0 3px #0c2d6b;
+    --color-scale-gray-7: #21262d;
+    --color-scale-blue-8: #36b38f;
+
+    /*! Extensions from @primer/css/alerts/flash.scss */
+    --color-social-reaction-border: var(--color-scale-blue-8);
+    --color-social-reaction-bg: transparent;
+    --color-social-reaction-bg-hover: rgba(73, 243, 195, 0.5);
+    --color-social-reaction-bg-reacted-hover: rgba(73, 243, 195, 0.5);
+}
+
+.btn-primary {
+    background-color: transparent;
+    border-style: dashed;
+    border-color: #49F3C3;
+    color: #49F3C3;
+}
+
+.btn-primary:not(:disabled):hover {
+    color: #333;
+}
+
+.btn-primary:active {
+    background-color: #49F3C3;
+    border-style: solid;
+    border-color: #49F3C3;
+    color: transparent;
+}
+
+.btn-primary:disabled {
+    background-color: transparent;
+    border-style: dashed;
+    cursor: auto;
+    color: #888;
+}
+
+.gsc-comments-count, .gsc-comments-count-separator {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 200;
+    font-size: 2rem;
+}
+
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 200;
+}
+
+html {
+    font-size: 16px;
+    padding: 0 2px;
+}
+
+main .pagination-loader-container {
+    background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
+}
+
+main {
+    font-family: "Anaheim", "Courier New", sans-serif;
+    text-size-adjust: 100%;
+}
+
+main div.color-text-primary.gsc-main div.gsc-comments div.gsc-header em.text-sm.color-text-secondary {
+    display: none;
+}
+
+main textarea::placeholder {
+    color: rgba(144, 133, 115, 0.2);
+}
+
+.gsc-comment-box-markdown-hint {
+    padding-left: 12px;
+}
+
+.markdown pre, .markdown pre code, .markdown .highlight {
+    font-family: Monoid, monospace, sans-serif;
+    font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual;
+    font-feature-settings: "calt" 1, "liga" 1;
+    font-size: .55rem !important;
+    background-color: rgb(20, 21, 22);
+    color: #49F3C3;
+}
+
+.markdown code {
+    padding: 0;
+}
+
+.markdown p code {
+    color: #FFFECA;
+    background-color: rgb(20, 21, 22);
+}
+
+main .gsc-comment-box-separator {
+    display: none;
+}
+
+.gsc-comment-box-preview {
+    border-bottom-width: 1px;
+}
+
+.gsc-comment-header {
+    margin-top: 8px;
+}
+
+.gsc-is-fixed-width {
+    font-family: Monoid, monospace, sans-serif;
+    color: #49F3C3;
+}

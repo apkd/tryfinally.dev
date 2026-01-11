@@ -1,0 +1,15 @@
+﻿.spoiler {
+    all: unset;
+}
+
+.spoiler:after {
+    all: unset;
+}
+
+.spoiler:hover:after {
+    all: unset;
+}
+
+.require-scripting {
+    display: none !important;
+}

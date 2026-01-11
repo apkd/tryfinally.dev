@@ -1,0 +1,63 @@
+{% assign author = site.authors[post.author] %}
+<div class="col-md-6 mb-30px">
+    <div class="listfeatured h-100">
+        <div class="row h-100">
+            <div class="col-12 col-md-12 col-lg-5 pr-lg-0">
+                <div class="h-100">
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                        <div class="featuredbox-thumb">
+                            <img class="featuredbox-img-cover{% if post.image contains '.gif' %} crisp-edges{% endif %}"
+                                 src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image | replace_first: 'assets/img-min/social/', 'assets/img-min/thumb/' }}{% endif %}"
+                                 alt="{{ post.title | xml_escape }}">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-7">
+                <div class="h-100 card-group">
+                    <div class="card">
+                        <div class="card-body ps-lg-0">
+                            <h1 class="card-title">
+                                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                            </h1>
+
+                            <span class="card-text">{{ post.excerpt | strip_html | truncatewords:25 | markdownify }}</span>
+                        </div>
+                        <div class="card-footer ps-lg-0 b-0 mt-auto mb-2">
+                            <div class="d-flex align-content-center">
+                                <span class="align-self-center">
+                                    {% if post.author and author.avatar %}
+                                    <!-- <a href="{{site.baseurl}}/about" class="noundreline"> -->
+                                        <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
+                                    <!-- </a> -->
+                                    {% endif %}
+                                </span>
+                                <span class="d-column">
+                                    {% if post.author and author.web %}
+                                    <span class="author-name"><a target="_blank" href="{{ author.web }}">{{ author.display_name }}</a></span>
+                                    {% else %}
+                                    <span class="author-name d-block">{{ author.display_name }}</span>
+                                    {% endif %}
+                                    <span style="margin-top: -8px" class="post-date d-block">{{ post.date | date_to_string }}</span>
+                                </span>
+                                <div class="flex-grow-1 align-self-end text-end">
+                                    <span class="avatar-24">
+                                        {% if post.contributors %}
+                                            {% for contributor in post.contributors %}
+                                            {% if contributor != post.author %}
+                                            <a href="https://github.com/{{ contributor }}" title="{{ contributor }}">
+                                                {% avatar user=contributor %}
+                                            </a>
+                                            {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

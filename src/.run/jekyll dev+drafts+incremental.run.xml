@@ -1,0 +1,15 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="jekyll dev+drafts+incremental" type="RunNativeExe" factoryName="Native Executable">
+    <option name="EXE_PATH" value="C:/Ruby34-x64/bin/bundle.bat" />
+    <option name="PROGRAM_PARAMETERS" value="exec jekyll serve --watch --drafts --incremental --skip-initial-build --config _config.yml,_config_dev.yml" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+    <option name="PASS_PARENT_ENVS" value="1" />
+    <envs>
+      <env name="JEKYLL_ENV" value="development" />
+    </envs>
+    <option name="ENV_FILE_PATHS" value="" />
+    <option name="REDIRECT_INPUT_PATH" value="" />
+    <option name="MIXED_MODE_DEBUG" value="0" />
+    <method v="2" />
+  </configuration>
+</component>
