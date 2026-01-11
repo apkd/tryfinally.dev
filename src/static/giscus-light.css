@@ -1,0 +1,212 @@
+﻿/*! Modified from GitHub's dark theme in primer/primitives.
+ * MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
+
+/* latin-ext */
+@font-face {
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(./fonts/barlow/HTxwL3I-JCGChYJ8VI-L6OO_au7B497yz3jWuZEC.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(./fonts/barlow/HTxwL3I-JCGChYJ8VI-L6OO_au7B497yz3bWuQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Anaheim';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(./fonts/anaheim/8vII7w042Wp87g4G4U3eEX5e.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Anaheim';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(./fonts/anaheim/8vII7w042Wp87g4G4UPeEQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Monoid';
+    src: url('./fonts/monoid/monoid.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+main {
+    --color-prettylights-syntax-comment: #6e7781;
+    --color-prettylights-syntax-constant: #0550ae;
+    --color-prettylights-syntax-entity: #8250df;
+    --color-prettylights-syntax-storage-modifier-import: #24292f;
+    --color-prettylights-syntax-entity-tag: #054da9;
+    --color-prettylights-syntax-keyword: #ac5e00;
+    --color-prettylights-syntax-string: #0a3069;
+    --color-prettylights-syntax-variable: #953800;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #6c3900;
+    --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+    --color-prettylights-syntax-invalid-illegal-bg: #6c3900;
+    --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+    --color-prettylights-syntax-carriage-return-bg: #ac5e00;
+    --color-prettylights-syntax-string-regexp: #054da9;
+    --color-prettylights-syntax-markup-list: #3b2300;
+    --color-prettylights-syntax-markup-heading: #0550ae;
+    --color-prettylights-syntax-markup-italic: #24292f;
+    --color-prettylights-syntax-markup-bold: #24292f;
+    --color-prettylights-syntax-markup-deleted-text: #6c3900;
+    --color-prettylights-syntax-markup-deleted-bg: #fefe48;
+    --color-prettylights-syntax-markup-inserted-text: #054da9;
+    --color-prettylights-syntax-markup-inserted-bg: #c0f6ff;
+    --color-prettylights-syntax-markup-changed-text: #953800;
+    --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+    --color-prettylights-syntax-markup-ignored-text: #eaeef2;
+    --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+    --color-prettylights-syntax-meta-diff-range: #8250df;
+    --color-prettylights-syntax-brackethighlighter-angle: #57606a;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+    --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+    --color-btn-text: #24292f;
+    --color-btn-bg: #f6f8fa;
+    --color-btn-border: rgba(27, 31, 36, 0.15);
+    --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+    --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    --color-btn-hover-bg: #f3f4f6;
+    --color-btn-hover-border: rgba(27, 31, 36, 0.15);
+    --color-btn-active-bg: hsla(220, 14%, 93%, 1);
+    --color-btn-active-border: rgba(27, 31, 36, 0.15);
+    --color-btn-primary-text: #ffffff;
+    --color-btn-primary-bg: #0088ff;
+    --color-btn-primary-border: rgba(27, 31, 36, 0.15);
+    --color-btn-primary-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
+    --color-btn-primary-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    --color-btn-primary-hover-bg: #0566d5;
+    --color-btn-primary-hover-border: rgba(27, 31, 36, 0.15);
+    --color-btn-primary-selected-bg: hsla(212, 95%, 41%, 1);
+    --color-btn-primary-selected-shadow: inset 0 1px 0 rgba(0, 31, 80, 0.2);
+    --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.8);
+    --color-btn-primary-disabled-bg: #65ccff;
+    --color-btn-primary-disabled-border: rgba(27, 31, 36, 0.15);
+    --color-fg-default: #24292f;
+    --color-fg-muted: #57606a;
+    --color-fg-subtle: #6e7781;
+    --color-canvas-default: #ffffff;
+    --color-canvas-overlay: #ffffff;
+    --color-canvas-inset: #f6f8fa;
+    --color-canvas-subtle: #f6f8fa;
+    --color-border-default: #d0d7de;
+    --color-border-muted: hsla(210, 18%, 87%, 1);
+    --color-neutral-muted: rgba(175, 184, 193, 0.2);
+    --color-neutral-subtle: rgba(234, 238, 242, 0.5);
+    --color-accent-fg: #0969da;
+    --color-accent-emphasis: #0969da;
+    --color-accent-muted: rgba(84, 174, 255, 0.4);
+    --color-accent-subtle: #ddf4ff;
+    --color-success-fg: #0566d5;
+    --color-danger-fg: #ac5e00;
+    --color-primer-shadow-focus: 0 0 0 3px rgba(9, 105, 218, 0.3);
+    --color-scale-gray-0: #f6f8fa;
+    --color-scale-gray-1: #eaeef2;
+    --color-scale-blue-1: #b6e3ff;
+
+    /*! Extensions from @primer/css/alerts/flash.scss */
+    --color-social-reaction-border: var(--color-scale-blue-1);
+    --color-social-reaction-bg: var(--color-scale-gray-0);
+    --color-social-reaction-bg-hover: var(--color-scale-gray-1);
+    --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
+}
+
+/*$code: #49F3C3;*/
+/*$keyword: #FF6E89;*/
+/*$types: #FFCB6B;*/
+/*$punctuation: #FFFFFF;*/
+/*$constant: #FFFECA;*/
+/*$comments: #999;*/
+
+.gsc-comments-count, .gsc-comments-count-separator {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 200;
+    font-size: 2rem;
+}
+
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 200;
+}
+
+html {
+    font-size: 16px;
+    padding: 0 2px;
+}
+
+main .pagination-loader-container {
+    background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
+}
+
+main {
+    font-family: "Anaheim", "Courier New", sans-serif;
+    text-size-adjust: 100%;
+}
+
+main div.color-text-primary.gsc-main div.gsc-comments div.gsc-header em.text-sm.color-text-secondary {
+    display: none;
+}
+
+main textarea::placeholder {
+    color: rgba(144, 133, 115, 0.2);
+}
+
+.gsc-comment-box-markdown-hint {
+    padding-left: 12px;
+}
+
+.markdown pre, .markdown pre code, .markdown .highlight {
+    font-family: Monoid, monospace, sans-serif;
+    font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual;
+    font-feature-settings: "calt" 1, "liga" 1;
+    font-size: .55rem !important;
+    background-color: rgb(20, 21, 22);
+    color: #49F3C3;
+}
+
+.markdown code {
+    padding: 0;
+}
+
+.markdown p code {
+    color: #FFFECA;
+    background-color: rgb(20, 21, 22);
+}
+
+main .gsc-comment-box-separator {
+    display: none;
+}
+
+.gsc-comment-box-preview {
+    border-bottom-width: 1px;
+}
+
+.gsc-comment-header {
+    margin-top: 8px;
+}
+
+.gsc-is-fixed-width {
+    font-family: Monoid, monospace, sans-serif;
+    color: #49F3C3;
+}

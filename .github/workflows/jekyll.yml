@@ -1,0 +1,76 @@
+name: jekyll
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: actions/checkout@v4
+        uses: actions/checkout@v4
+      - name: actions/configure-pages@v5
+        uses: actions/configure-pages@v5
+        id: pages
+      - uses: actions/setup-dotnet@v5
+        with: { dotnet-version: 10 }
+      - name: ruby/setup-ruby@v1.281.0
+        uses: ruby/setup-ruby@v1.281.0
+        with: { ruby-version: '3.4' }
+      - name: actions/setup-node@v6
+        uses: actions/setup-node@v6
+        with: { node-version: 22 }
+      - name: corepack enable
+        working-directory: src
+        run: |
+          corepack enable
+          corepack prepare yarn@4.12.0 --activate
+      - name: actions/cache@v4
+        uses: actions/cache@v4
+        with:
+          path: |
+            src/.yarn/cache
+            src/.yarn/unplugged
+            src/.yarn/install-state.gz
+            src/.yarn/build-state.yml
+            src/node_modules
+            src/ruby_modules
+            src/Gemfile.lock
+          key: ${{ runner.os }}-yarn-${{ hashFiles('src/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: yarn install
+        run: yarn install --immutable
+        working-directory: src
+      - name: bundle install
+        run: bundle install
+        working-directory: src
+      - name: yarn build
+        run: yarn build
+        env: { JEKYLL_GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        working-directory: src
+      - name: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v3
+        with: { path: src/_site }
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: actions/deploy-pages@v4
+        id: deployment
+        uses: actions/deploy-pages@v4

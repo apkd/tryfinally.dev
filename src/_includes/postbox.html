@@ -1,0 +1,62 @@
+{% assign author = site.authors[post.author] %}
+
+{% case post.thumbtext.size %}
+{% when 1, 2, 3 %}     {% assign fontsize=7.5 %}
+{% when 4 %}           {% assign fontsize=6.0 %}
+{% when 5 %}           {% assign fontsize=4.5 %}
+{% when 6 %}           {% assign fontsize=4.0 %}
+{% when 7 %}           {% assign fontsize=3.5 %}
+{% when 8 %}           {% assign fontsize=3.0 %}
+{% when 9 %}           {% assign fontsize=2.8 %}
+{% when 10, 11, 12 %}  {% assign fontsize=2.5 %}
+{% when 13, 14, 15 %}  {% assign fontsize=2.0 %}
+{% else %}             {% assign fontsize=1.9 %}
+{% endcase %}
+
+<div class="col-lg-4 col-md-6 mb-30px card-group">
+    <div class="card h-100">
+        <a href="{{ site.baseurl }}{{ post.url }}">
+            <div class="postbox-thumb" style="font-size:{{fontsize}}rem">
+                <figure>
+                    {% if post.image %}
+                    <img style="height:250px; width:100%" class="{% if post.image contains '.gif' %}crisp-edges{% endif %}"
+                         src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image | replace_first: 'assets/img/social/', 'assets/img/thumb/' }}{% endif %}"
+                         alt="{{ post.title | xml_escape }}"
+                         {% if forloop.index0 > 0 %}loading="lazy"{% endif %}
+                         >
+                    {% endif %}
+                    {% if post.thumbtext %}
+                    <figcaption><div class="postbox-thumb-text" style="margin-top:-{{fontsize}}px">{{ post.thumbtext }}</div></figcaption>
+                    {% endif %}
+                </figure>
+            </div>
+        </a>
+        <div class="card-body pb-0">
+            <h1 class="card-title">
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify }}</a>
+            </h1>
+            <span class="card-text">{{ post.excerpt | strip_html | truncatewords:30 | markdownify }}</span>
+        </div>
+        <div class="card-footer mb-1">
+            <div class="d-flex justify-content-between align-items-end">
+                <span class="post-date">{{ post.date | date_to_string }}</span>
+                <span class="avatar-24">
+                    {% if post.contributors %}
+                        {% for contributor in post.contributors %}
+                        {% if contributor != post.author %}
+                        <a class="nounderline" href="https://github.com/{{ contributor }}" title="{{ contributor }}">
+                            {% avatar user=contributor %}
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if post.author and author.avatar %}
+<!--                    <a href="{{site.baseurl}}/about" class="noundreline">-->
+                        <img class="avatar" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
+<!--                    </a>-->
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

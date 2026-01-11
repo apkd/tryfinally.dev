@@ -1,0 +1,30 @@
+{
+  "parse": {},
+  "compress": {
+    "arguments": true,
+    "booleans_as_integers": true,
+    "drop_console": true,
+    "ecma": 6,
+    "hoist_funs": true,
+    "keep_infinity": true,
+    "unsafe": true,
+    "unsafe_math": true,
+    "toplevel": true,
+    "unsafe_proto": true,
+    "unsafe_arrows": true
+  },
+  "mangle": {
+    "toplevel": true
+  },
+  "format": {
+    "ecma": 6
+  },
+  "ecma": 6,
+  "keep_classnames": false,
+  "keep_fnames": false,
+  "ie8": false,
+  "module": false,
+  "nameCache": null,
+  "safari10": false,
+  "toplevel": false
+}

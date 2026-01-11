@@ -1,0 +1,40 @@
+---
+layout: site
+title: 404
+permalink: /404.html
+searchable: false
+---
+
+
+{% assign featured_post_count = 0 %}
+{% for post in site.posts %}
+    {% if post.featured == true and post.draft != true %}
+        {% assign featured_post_count = featured_post_count | plus: 1 %}
+    {% endif %}
+{% endfor %}
+
+<div id="pagefind-search-box" class="mt-3 mb-5"></div>
+
+<div class="text-center">
+<h1 class="display-1 mt-5 mb-3"><span class="badge bg-danger">404</span> send help</h1>
+{% if featured_post_count == 1 %}
+<p>Page not found. Here's something else for you to read.</p>
+{% endif %}
+{% if featured_post_count > 1 %}
+<p>Page not found. Here's some other posts instead.</p>
+{% endif %}
+</div>
+
+{% if featured_post_count > 0 %}
+<section class="featured-posts mt-5">
+    <div class="row">
+
+    {% for post in site.posts %}
+        {% if post.featured == true %}
+            {% include featuredbox.html %}
+        {% endif %}
+    {% endfor %}
+
+    </div>
+</section>
+{% endif %}

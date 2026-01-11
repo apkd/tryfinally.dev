@@ -1,0 +1,79 @@
+name: "tryfinally.dev"
+title: "tryfinally.dev"
+description: ""
+baseurl: ""
+include: ["_pages"]
+permalink: /:title
+repository: apkd/tryfinally.dev
+logo: "assets/img/site/avatar.webp"
+
+authors:
+  apkd:
+    name: apkd
+    display_name: Mateusz
+    url: "https://tryfinally.dev/"
+    avatar: "assets/img/site/avatar.webp"
+    picture: "assets/img/site/avatar.webp"
+    description: ""
+
+social:
+  links:
+    - https://github.com/apkd
+    - https://twitter.com/_tryfinally
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-avatar
+
+markdown: kramdown
+paginate: 64
+paginate_path: /page:num/
+livereload: true
+livereload_min_delay: 0
+livereload_max_delay: 0
+
+sass:
+  style: compressed
+
+kramdown:
+  input: GFM
+  header_offset: 1
+  math_engine: nil
+  footnote_backlink: return ︿
+  footnote_nr: 0
+  auto_id_stripping: true
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+      start_line: 0
+
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
+
+exclude:
+  - .git/
+  - .idea/
+  - .run/
+  - node_modules/
+  - ruby_modules/
+  - static/
+  - ./*.json
+  - ./*.lock
+  - ./*.log
+  - Gemfile
+  - CNAME
+
+keep_files:
+  - assets/
+
+code:
+  cs: "{:.language-cs.highlight}"
+  sh: "{:.language-sh.highlight}"
+  js: "{:.language-js.highlight}"
+  css: "{:.language-css.highlight}"
+  cpp: "{:.language-cpp.highlight}"

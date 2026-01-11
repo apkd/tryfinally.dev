@@ -1,0 +1,11 @@
+﻿/.idea
+/src/_site
+/src/_drafts
+/src/_drafts_hidden
+/src/node_modules
+/src/ruby_modules
+/src/yarn-error.log
+.jekyll-metadata
+Gemfile.lock
+.yarn
+src/build-script

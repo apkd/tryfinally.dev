@@ -1,0 +1,188 @@
+﻿$code: #49F3C3;
+$keyword: #FF6E89;
+$types: #FFCB6B;
+$punctuation: #FFFFFF;
+$constant: #FFFECA;
+$comments: #d4ccc0;
+$lineno: #d4ccc0;
+
+/*! purgecss start ignore */
+body .gist .blob-code-inner,
+body .gist .blob-num {
+  font-family: Monoid, monospace, sans-serif !important;
+  font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual !important;
+  font-feature-settings: "calt" 1, "liga" 1 !important;
+  font-size: .65rem !important;
+  line-height: 1.6 !important;
+  background-color: unset !important;
+  border-radius: 0 !important;
+}
+
+body .gist .gist-file {
+  border: none !important;
+  padding: 12px 4px 4px !important;
+  background-color: #181818 !important;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 0 !important;
+}
+
+body .gist .highlight {
+  background-color: unset !important;
+}
+
+body .gist .gist-data {
+  border-bottom: none;
+  background-color: unset !important;
+  border-radius: 0 !important;
+}
+
+body .gist-meta {
+  font: 0/0 a !important;
+  text-shadow: none !important;
+  color: transparent !important;
+  background-color: unset !important;
+  border-radius: 0 !important;
+  line-height: 2rem !important;
+
+  a:last-child {
+    display: none !important;
+  }
+  a:nth-child(2) {
+    text-transform: lowercase !important;
+  }
+
+  a:nth-child(2)::after {
+    content: " on gist.github.com" !important;
+  }
+  a:nth-child(2)::before {
+    content: "view " !important;
+  }
+}
+
+body .gist-meta a {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 300 !important;
+  color: $comments !important;
+  text-decoration: underline dotted currentColor !important;
+  text-decoration-thickness: 0.5px !important;
+}
+
+body .gist .blob-code-inner {
+  color: $code;
+}
+
+body .gist .blob-num {
+  font-style: italic !important;
+  text-align: left;
+}
+
+body .gist .pl-kos {
+  color: white;
+}
+
+body .gist .blob-num,
+body .gist .pl-vo,
+body .gist .pl-vpf {
+  color: $comments
+}
+
+body .gist .pl-c,
+body .gist .pl-c span {
+  color: $comments;
+  font-style: italic;
+}
+
+body .gist .pl-mb {
+  color: $keyword;
+  font-weight: 700;
+}
+
+body .gist .pl-mh .pl-en {
+  color: #cb4b16;
+}
+
+body .gist .pl-mi {
+  color: #859900;
+  font-style: italic;
+}
+
+body .gist .pl-pds,
+body .gist .pl-s,
+body .gist .pl-c1 {
+  color: $constant;
+}
+body .gist .pl-s1,
+body .gist .pl-s1 .pl-pse .pl-s2,
+body .gist .pl-sv {
+  color: $code;
+}
+
+body .gist .pl-s1 .pl-s2,
+body .gist .pl-smp,
+body .gist .pl-stj,
+body .gist .pl-e,
+body .gist .pl-en,
+body .gist .pl-ent,
+body .gist .pl-v {
+  color: $code;
+}
+
+body .gist .pl-k,
+body .gist .pl-mdh,
+body .gist .pl-mdr,
+body .gist .pl-ml,
+body .gist .pl-mm,
+body .gist .pl-mo,
+body .gist .pl-mp,
+body .gist .pl-mr,
+body .gist .pl-ms,
+body .gist .pl-smi,
+body .gist .pl-s1 .pl-v,
+body .gist .pl-s3 {
+  color: $keyword;
+}
+
+body .gist .pl-mh,
+body .gist .pl-sc,
+body .gist .pl-sr .pl-cce {
+  color: #cb4b16;
+}
+
+body .gist .pl-mq,
+body .gist .highlight-source-css .pl-k {
+  color: $comments;
+}
+
+body .gist .pl-sr,
+body .gist .pl-sr .pl-sra,
+body .gist .pl-sr .pl-sre,
+body .gist .pl-src {
+  color: #d30102;
+}
+
+body .gist .pl-st,
+body .gist .highlight-source-c\+\+ .pl-s {
+  color: #dc322f;
+}
+
+body .gist .pl-mi1,
+body .gist .pl-mdht {
+  color: $comments;
+}
+
+body .gist .pl-md,
+body .gist .pl-mdhf,
+body .gist .pl-id,
+body .gist .pl-ii {
+  color: $comments;
+}
+
+@media (prefers-color-scheme: light) {
+  body .gist .gist-file {
+    background-color: #080808 !important;
+    filter: invert(1) hue-rotate(180deg) saturate(2);
+  }
+}
+/*! purgecss end ignore */
