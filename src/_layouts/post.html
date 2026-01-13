@@ -45,6 +45,15 @@ post_class: post-template
 
         {% if page.image %}
         <div class="featured-image-container mb-4">
+            <div class="wishlist-promo">
+                <div class="wishlist-promo-glass">
+                    <iframe src="https://store.steampowered.com/widget/3107870/?l=english" frameborder="0"></iframe>
+                </div>
+
+                <img class="wishlist-promo-overlay fade-in-long wishlist-promo-overlay-left d-none d-md-block" src="/assets/img/posts/overlay-left.png" alt="">
+                <img class="wishlist-promo-overlay fade-in-long wishlist-promo-overlay-right d-none d-sm-block" src="/assets/img/posts/overlay-right.png" alt="">
+                <img class="wishlist-promo-overlay fade-in-long wishlist-promo-overlay-right d-xs-block d-sm-none" src="/assets/img/posts/overlay-right-mobile.png" alt="">
+            </div>
             <img width="2048" height="400" class="featured-image" fetchpriority="high" src="{% if page.image contains ' ://' %} {{ page.image | replace_first: 'assets/img/social/', 'assets/img/cover/'  }}{% else %}{{site.baseurl }}/{{ page.image | replace_first: 'assets/img/social/', 'assets/img/cover/'  }}{% endif %}" alt="{{ page.title }}">
             {% comment %}
             {% if page.thumbtext %}
@@ -138,6 +147,24 @@ post_class: post-template
 
                 </div>
             </div>
+        </div>
+
+        <div class="featured-image-container mb-5 mt-5">
+            <div class="wishlist-promo" style="left: -24px">
+                <div class="wishlist-promo-glass">
+                    <iframe src="https://store.steampowered.com/widget/3107870/?l=english" frameborder="0"></iframe>
+                </div>
+
+                <img class="wishlist-promo-overlay wishlist-promo-overlay-left d-none d-md-block" src="/assets/img/posts/overlay-left.png" alt="">
+                <img class="wishlist-promo-overlay wishlist-promo-overlay-right d-none d-sm-block" src="/assets/img/posts/overlay-right.png" alt="">
+                <img class="wishlist-promo-overlay wishlist-promo-overlay-right d-xs-block d-sm-none" src="/assets/img/posts/overlay-right-mobile.png" alt="">
+            </div>
+            <img width="2048" height="400" class="featured-image" fetchpriority="high" src="assets/img/cover/XucH5JNRFig.webp" alt="Highland Keep Promo">
+            {% comment %}
+            {% if page.thumbtext %}
+            <div class="featured-image-text">{{ page.thumbtext }}</div>
+            {% endif %}
+            {% endcomment %}
         </div>
     </div>
 </div>

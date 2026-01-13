@@ -1,0 +1,96 @@
+.wishlist-promo {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  width: min(700px, 100%);
+  height: calc(200px - 33.5px);
+  transform: scale(0.9);
+  transform-origin: top right;
+  overflow: visible;
+  @media (max-width: 767.98px) {
+    top: 40px;
+    right: 20px;
+    left: -20px;
+    width: auto;
+  }
+}
+
+.wishlist-promo-glass {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 48px rgba(0, 0, 0, 0.7);
+  height: calc(200px - 33.5px);
+  overflow: visible;
+}
+
+.wishlist-promo-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: rgb(20 20 20 / 0.35);
+  height: calc(200px - 33.5px);
+  backdrop-filter: blur(8px) saturate(80%) contrast(2);
+  -webkit-backdrop-filter: blur(8px) saturate(80%) contrast(2);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.wishlist-promo-glass > iframe {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 200px;
+  opacity: 0.85;
+  border: 0;
+  background: transparent;
+  filter: saturate(150%);
+  overflow: visible;
+}
+
+.wishlist-promo-overlay {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+
+  display: block;
+  max-width: none;
+  max-height: none;
+
+  object-fit: contain;
+  top: 0;
+  width: auto;
+}
+
+.wishlist-promo-overlay-left {
+  left: 0;
+  height: 318px;
+  object-position: left top;
+  transform: translate(-121px, -74px);
+}
+
+.wishlist-promo-overlay-right {
+  right: 0;
+  height: 318px;
+  object-position: right top;
+  transform: translate(127px, -74px);
+}
+
+.fade-in-long {
+  opacity: 0;
+  animation: fadeIn 6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-long, .fade-in-short {
+    opacity: 1;
+    animation: none;
+  }
+}

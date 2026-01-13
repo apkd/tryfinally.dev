@@ -14,23 +14,17 @@ searchable: false
 
 {% if featured_posts.size > 0 %}
 <section class="featured-posts d-md-block mt-4" >
-<!--     <div class="section-title"> -->
-<!--         <h2><span>featured</span></h2> -->
-<!--     </div> -->
     <div class="row">
         {% for post in featured_posts %}
             {% include featuredbox.html %}
         {% endfor %}
+
+        {% assign author = site.authors[post.author] %}
     </div>
 </section>
 {% endif %}
 
 <section class="recent-posts">
-<!--    {% if featured_posts.size > 0 %}-->
-<!--     <div class="section-title d-none d-md-block"> -->
-<!--         <h2><span>everything</span></h2> -->
-<!--     </div>-->
-<!--    {% endif %}-->
     <div class="row">
         {% for post in paginator.posts %}
             {% if post.featured != true %}
